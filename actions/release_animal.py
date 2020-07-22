@@ -22,7 +22,7 @@ def release_animal(arboretum):
     print("7. Ope'ape'a")
     print("8. Happy-Face Spider")
 
-    print('Choose animal.')
+    print('\nChoose animal.')
     choice = input("> ")
 
     if choice == "1":
@@ -57,14 +57,14 @@ def release_animal(arboretum):
 
     os.system('cls' if os.name == 'nt' else 'clear')
     for index, value in enumerate(biome1):
-        print(f'{index + 1}. River {value.id}')
+        print(f'{index + 1}. River ({len(value.animals)} animals)')
 
     if biome2:
         for index, value in enumerate(biome1):
             print(f'{index + 1}. Coastline {value.id}')
         
 
-    print(f'Where would you like to release the {animal.species}?')
+    print(f'\nWhere would you like to release the {animal.species}?')
     choice = input("> ")
 
     arboretum.rivers[int(choice) - 1].animals.append(animal)

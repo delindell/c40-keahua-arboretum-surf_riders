@@ -1,6 +1,6 @@
 import os
 from arboretum import Arboretum
-from actions.annex import annex_habitat
+from actions import annex_habitat
 from actions.release_animal import release_animal
 from actions.feed_animal import feed_animal
 from actions.cultivate_plant import cultivate_plant

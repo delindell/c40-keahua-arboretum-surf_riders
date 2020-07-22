@@ -12,7 +12,8 @@ def cultivate_plant(arboretum):
     print("3. Rainbow Eucalyptus Tree")
     print("4. Blue Jade Vine")
 
-    choice = input("Choose plant to cultivate > ")
+    print(']nChoose plant to cultivate.')
+    choice = input("> ")
 
     # if choice == "1":
     #     plant = MountainAppleTree()

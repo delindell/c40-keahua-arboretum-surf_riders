@@ -20,7 +20,8 @@ def feed_animal(arboretum):
     print("7. Ope'ape'a")
     print("8. Happy-Face Spider")
 
-    choice = input("Choose animal to feed > ")
+    print('\nChoose animal to feed.')
+    choice = input("> ")
 
     if choice == "1":
         animal = RiverDolphin()
@@ -39,10 +40,17 @@ def feed_animal(arboretum):
     # if choice == "8":
     #     animal = HappyFaceSpider()
 
+    os.system('cls' if os.name == 'nt' else 'clear')
     for index, value in enumerate(animal.prey):
       print(f'{index + 1}. {value}')
 
-    print(f'What is on the menu for the {animal.species}')
-    choice = input('> ')
 
-    animal.feed()
+    print(f'\nWhat is on the menu for the {animal.species}?')
+    choice = input('> ')
+    prey = list(animal.prey)
+
+    os.system('cls' if os.name == 'nt' else 'clear')
+    
+    animal.feed(prey[int(choice) - 1])
+
+    input("\n\nPress any key to continue...")
