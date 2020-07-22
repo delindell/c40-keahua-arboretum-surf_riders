@@ -11,6 +11,7 @@ def build_menu():
     print("+-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+")
     print("|  K  e  a  h  u  a    A  r  b  o  r  e  t  u  m  |")
     print("+-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-++-+")
+    print("")
     print("1. Annex Habitat")
     print("2. Release Animal into Habitat")
     print("3. Feed Animal")
