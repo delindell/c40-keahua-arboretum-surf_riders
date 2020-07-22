@@ -1,14 +1,14 @@
 from animals import Animal
 from animals import Identifiable
 from animals.movements import Swimming
-from animals.characteristics import Freshwater, Saltwater
+from animals.characteristics import StagnantFreshWater, Freshwater
 
-class RiverDolphin(Animal, Freshwater, Saltwater, Swimming, Identifiable):
+class Kikakapu(Animal, StagnantFreshWater, Freshwater, Identifiable):
 
     def __init__(self, species, age):
         Animal.__init__(self, species, age)
         Freshwater.__init__(self)
-        Saltwater.__init__(self)
+        StagnantFreshWater.__init__(self)
         Swimming.__init__(self)
         Identifiable.__init__(self)
         self.__prey = { "Trout", "Mackarel", "Salmon", "Sardine" }
@@ -19,10 +19,6 @@ class RiverDolphin(Animal, Freshwater, Saltwater, Swimming, Identifiable):
 
     def feed(self, prey):
         if prey in self.__prey:
-            print(f'The dolphin ate {prey} for a meal')
+            print(f'The Kikakapu devoured the {prey}')
         else:
-            print(f'The dolphin rejects the {prey}')
-
-
-    def __str__(self):
-        return f'Dolphin {self.id}. Eeee EeeEEeeeeEE!'
+            print(f'The Kikakapu hated the {prey}')

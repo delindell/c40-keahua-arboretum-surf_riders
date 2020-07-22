@@ -1,4 +1,4 @@
-from animals import Aquatic
+from .aquatic import Aquatic
 
 class Freshwater(Aquatic):
 

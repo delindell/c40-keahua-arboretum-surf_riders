@@ -1,7 +1,7 @@
 from animals import Aquatic
 from animals import Identifiable
-from environments import ContainsAnimals
-from environments import ContainsPlants
+from .contains_animals import ContainsAnimals
+from .contains_plants import ContainsPlants
 from animals import RiverDolphin
 
 
