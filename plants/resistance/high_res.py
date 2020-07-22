@@ -1,4 +1,8 @@
 class HighResistance: 
 
     def __init__(self):
-        self.insecticide_resistance = 'high'
+        self.__insecticide_resistance = 'high'
+
+    @property
+    def insecticide_resistance(self):
+        return self.__insecticide_resistance
