@@ -39,5 +39,10 @@ def feed_animal(arboretum):
     # if choice == "8":
     #     animal = HappyFaceSpider()
 
-    for index, prey in animal.prey:
-      print(f'{index + 1}. {prey}')
+    for index, value in enumerate(animal.prey):
+      print(f'{index + 1}. {value}')
+
+    print(f'What is on the menu for the {animal.species}')
+    choice = input('> ')
+
+    animal.feed()
