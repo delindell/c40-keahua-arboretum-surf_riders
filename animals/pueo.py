@@ -4,8 +4,8 @@ from animals.movements import Walking
 
 class Pueo(Animal, Walking, Identifiable):
 
-    def __init__(self, species, age):
-        Animal.__init__(self, species, age)
+    def __init__(self, age):
+        Animal.__init__(self, "Pueo", age)
         Walking.__init__(self)
         Identifiable.__init__(self)
         self.__prey = { "Rat", "Mouse", "Squirrel", "Naked Mole Rat" }

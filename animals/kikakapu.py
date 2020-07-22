@@ -3,10 +3,10 @@ from animals import Identifiable
 from animals.movements import Swimming
 from animals.characteristics import StagnantFreshWater, Freshwater
 
-class Kikakapu(Animal, StagnantFreshWater, Freshwater, Identifiable):
+class Kikakapu(Animal, StagnantFreshWater, Freshwater, Swimming, Identifiable):
 
-    def __init__(self, species, age):
-        Animal.__init__(self, species, age)
+    def __init__(self, age):
+        Animal.__init__(self, "Kikakapu", age)
         Freshwater.__init__(self)
         StagnantFreshWater.__init__(self)
         Swimming.__init__(self)

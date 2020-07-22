@@ -1,10 +1,12 @@
 from animals import Animal
 from animals import Identifiable
+from animals.movements import Flying
 
-class NeneGoose(Animal, Identifiable):
+class NeneGoose(Animal, Flying, Identifiable):
 
-    def __init__(self, species, age):
-        Animal.__init__(self, species, age)
+    def __init__(self, age):
+        Animal.__init__(self, "Nene Goose", age)
+        Flying.__init__(self)
         Identifiable.__init__(self)
         self.__prey = { "Silversword", "Grass", "Blue Jade Vine",
         "Eucalyptus" }

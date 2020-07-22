@@ -5,8 +5,8 @@ from animals.characteristics import Freshwater, Saltwater
 
 class RiverDolphin(Animal, Freshwater, Saltwater, Swimming, Identifiable):
 
-    def __init__(self, species, age):
-        Animal.__init__(self, species, age)
+    def __init__(self, age):
+        Animal.__init__(self, "River Dolphin", age)
         Freshwater.__init__(self)
         Saltwater.__init__(self)
         Swimming.__init__(self)

@@ -4,8 +4,8 @@ from animals.movements import Flying
 
 class Opeapea(Animal, Flying, Identifiable):
 
-    def __init__(self, species, age):
-        Animal.__init__(self, species, age)
+    def __init__(self, age):
+        Animal.__init__(self, "Opeapea", age)
         Flying.__init__(self)
         Identifiable.__init__(self)
         self.__prey = { "Crickets", "Worms", "Mosquitos", "Maggots" }

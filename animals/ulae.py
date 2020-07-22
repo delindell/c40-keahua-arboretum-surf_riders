@@ -5,8 +5,8 @@ from animals.movements import Swimming
 
 class Ulae(Animal, Saltwater, Swimming, Identifiable):
 
-    def __init__(self, species, age):
-        Animal.__init__(self, species, age)
+    def __init__(self, age):
+        Animal.__init__(self, "Ulae", age)
         Saltwater.__init__(self)
         Swimming.__init__(self)
         Identifiable.__init__(self)
