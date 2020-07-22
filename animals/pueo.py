@@ -2,7 +2,7 @@ from animals import Animal
 from animals import Identifiable
 from animals.movements import Walking
 
-class Pueo(Animal, Identifiable):
+class Pueo(Animal, Walking, Identifiable):
 
     def __init__(self, species, age):
         Animal.__init__(self, species, age)
