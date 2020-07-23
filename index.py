@@ -30,10 +30,10 @@ def main_menu():
     choice = input(">> ")
 
     if choice == "1":
-        pass
+        annex_habitat(keahua)
 
     if choice == "2":
-        pass
+        release_animal(keahua)
 
     if choice == "3":
         pass
