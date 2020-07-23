@@ -15,7 +15,7 @@ def cultivate_plant(arboretum):
     print('\nChoose plant to cultivate.')
     choice = input("> ")
 
-    elif choice == "1":
+    if choice == "1":
         plant = MountainTree()
     elif choice == "2":
         plant = Silversword()

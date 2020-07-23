@@ -23,8 +23,7 @@ def release_animal(arboretum):
 def choosing_which_animal(arboretum, choice):
     if choice == "1":
         animal = RiverDolphin()
-        biome1 = arboretum.habitats["rivers"]
-        biome2 = arboretum.habitats["coastlines"]
+        biome1 = arboretum.habitats["rivers"] + arboretum.habitats["coastlines"]
     elif choice == "2":
         animal = GoldDustDayGecko()
         biome1 = arboretum.habitats["forests"]
@@ -51,17 +50,14 @@ def choosing_which_animal(arboretum, choice):
         print('Invalid Choice.')
         input("\n\nPress any key to continue...")
         return
+        
+    finding_which_biome(biome1, choice, animal, arboretum)
 
+def finding_which_biome(biome1, choice, animal, arboretum):
     os.system('cls' if os.name == 'nt' else 'clear')
-    # replace 'River' with dynamic variable)
 
     for index, value in enumerate(biome1):
-        print(f'{index + 1}. {value.name} ({len(value.animal_population)} animals)')
-    if biome2:
-        for index, value in enumerate(biome2):
-            print(f'{i+2}. {value.name} ({len(value.animal_population)} animals)')
-        
-        
+        print(f'{index + 1}. {value.name} {value.id} ({len(value.animal_population)} animals)')
         
     print(f'\nWhere would you like to release the {animal.species}?')
     choice = input("> ")
@@ -73,4 +69,11 @@ def choosing_which_animal(arboretum, choice):
         return
 
     animal_habitat = biome1[int(choice) - 1].name.lower() + 's'
-    arboretum.habitats[animal_habitat][int(choice) - 1].addAnimal(animal)
+
+    for index, val in enumerate(arboretum.habitats[animal_habitat]):
+        if biome1[int(choice) - 1].id == val.id:
+            arboretum.habitats[animal_habitat][index].addAnimal(animal)
+    
+    # find_index = [i if biome1[int(choice) - 1].id == val.id else -1 for i, val in enumerate(arboretum.habitats[animal_habitat])][0]
+
+    # arboretum.habitats[animal_habitat][find_index].addAnimal(animal)
