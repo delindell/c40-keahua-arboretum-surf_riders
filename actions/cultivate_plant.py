@@ -1,8 +1,8 @@
 import os
-from plants import MountainTree
-from plants import Silversword
-from plants import RainbowTree
-from plants import BlueJadeVine
+from flora_fauna import MountainTree
+from flora_fauna import Silversword
+from flora_fauna import RainbowTree
+from flora_fauna import BlueJadeVine
 
 def cultivate_plant(arboretum):
     plant = None

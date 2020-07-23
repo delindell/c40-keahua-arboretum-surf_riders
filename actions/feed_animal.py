@@ -1,12 +1,12 @@
 import os
-from animals import RiverDolphin
-# from animals import GoldDustDayGecko
-# from animals import NeneGoose
-# from animals import Kikakapu
-# from animals import Pueo
-# from animals import Ulae
-# from animals import OpeApeA
-# from animals import HappyFaceSpider
+from flora_fauna import RiverDolphin
+from flora_fauna import GoldDustDayGecko
+from flora_fauna import NeneGoose
+from flora_fauna import Kikakapu
+from flora_fauna import Pueo
+from flora_fauna import Ulae
+from flora_fauna import Opeapea
+from flora_fauna import HappyFaceSpider
 
 def feed_animal(arboretum):
     animal = None
@@ -25,20 +25,20 @@ def feed_animal(arboretum):
 
     if choice == "1":
         animal = RiverDolphin()
-    # if choice == "2":
-    #     animal = GoldDustDayGecko()
-    # if choice == "3":
-    #     animal = NeneGoose()
-    # if choice == "4":
-    #     animal = Kikakapu()
-    # if choice == "5":
-    #     animal = Pueo()
-    # if choice == "6":
-    #     animal = Ulae()
-    # if choice == "7":
-    #     animal = OpeApeA()
-    # if choice == "8":
-    #     animal = HappyFaceSpider()
+    elif choice == "2":
+        animal = GoldDustDayGecko()
+    elif choice == "3":
+        animal = NeneGoose()
+    elif choice == "4":
+        animal = Kikakapu()
+    elif choice == "5":
+        animal = Pueo()
+    elif choice == "6":
+        animal = Ulae()
+    elif choice == "7":
+        animal = Opeapea()
+    elif choice == "8":
+        animal = HappyFaceSpider()
 
     os.system('cls' if os.name == 'nt' else 'clear')
     for index, value in enumerate(animal.prey):

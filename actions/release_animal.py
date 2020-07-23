@@ -1,12 +1,12 @@
 import os
-from animals import RiverDolphin
-from animals import GoldDustDayGecko
-from animals import NeneGoose
-from animals import Kikakapu
-from animals import Pueo
-from animals import Ulae
-from animals import Opeapea
-from animals import HappyFaceSpider
+from flora_fauna import RiverDolphin
+from flora_fauna import GoldDustDayGecko
+from flora_fauna import NeneGoose
+from flora_fauna import Kikakapu
+from flora_fauna import Pueo
+from flora_fauna import Ulae
+from flora_fauna import Opeapea
+from flora_fauna import HappyFaceSpider
 
 def release_animal(arboretum):
     available_animals = ["River Dolphin", "Gold Dust Day Gecko", "Nene Goose", "Kīkākapu", "Pueo", "'Ulae", "Ope'ape'a", "Happy-Face Spider"]

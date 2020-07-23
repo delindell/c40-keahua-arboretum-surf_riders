@@ -2,7 +2,7 @@ import os
 
 def build_facility_report(arboretum):
     os.system('cls' if os.name == 'nt' else 'clear')
-    
+    # Brute force. Redo this to make dynamic
     for river in arboretum.rivers:
         print(f'\n{river.name} []') # missing id value
         for index, animal in enumerate(river.animal_population):
