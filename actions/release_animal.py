@@ -53,7 +53,7 @@ def choosing_which_animal(arboretum, choice):
         return
 
     os.system('cls' if os.name == 'nt' else 'clear')
-    # replace 'River' and 'Coastline' with dynamic variable
+    # replace 'River' with dynamic variable
     for index, value in enumerate(biome1):
         print(f'{index + 1}. River ({len(value.animals)} animals)')
         
