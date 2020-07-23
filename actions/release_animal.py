@@ -67,7 +67,7 @@ def choosing_which_animal(arboretum, choice):
 
     animal_habitat = biome1[int(choice) - 1].name
 
-    # find a way to add dynamically
+    # add dynamically instead of this
     if animal_habitat == 'River':
         arboretum.rivers[int(choice) - 1].addAnimal(animal)
     elif animal_habitat == 'Coastline':
@@ -79,5 +79,4 @@ def choosing_which_animal(arboretum, choice):
     elif animal_habitat == 'Mountain':
         arboretum.mountains[int(choice) - 1].addAnimal(animal)
     elif animal_habitat == 'Grassland':
-        arboretum.grasslands[int(choice) - 1].addAnimal(animal)
-        
+        arboretum.grasslands[int(choice) - 1].addAnimal(animal)        
