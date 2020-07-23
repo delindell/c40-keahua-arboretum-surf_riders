@@ -1,12 +1,10 @@
 from .animal import Animal
 from .identifiable import Identifiable
-from animals.movements import Flying
 
-class Opeapea(Animal, Flying, Identifiable):
+class Opeapea(Animal, Identifiable):
 
-    def __init__(self, age):
-        Animal.__init__(self, "Opeapea", age)
-        Flying.__init__(self)
+    def __init__(self):
+        Animal.__init__(self, "Opeapea", 5)
         Identifiable.__init__(self)
         self.__prey = { "Crickets", "Worms", "Mosquitos", "Maggots" }
 

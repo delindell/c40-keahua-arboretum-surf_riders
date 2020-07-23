@@ -1,15 +1,13 @@
 from animals import Animal
 from animals import Identifiable
-from animals.movements import Swimming
 from animals.characteristics import StagnantFreshWater, Freshwater
 
-class Kikakapu(Animal, StagnantFreshWater, Freshwater, Swimming, Identifiable):
+class Kikakapu(Animal, StagnantFreshWater, Freshwater, Identifiable):
 
-    def __init__(self, age):
-        Animal.__init__(self, "Kikakapu", age)
+    def __init__(self):
+        Animal.__init__(self, "Kikakapu", 1)
         Freshwater.__init__(self)
         StagnantFreshWater.__init__(self)
-        Swimming.__init__(self)
         Identifiable.__init__(self)
         self.__prey = { "Trout", "Mackarel", "Salmon", "Sardine" }
 
@@ -22,3 +20,6 @@ class Kikakapu(Animal, StagnantFreshWater, Freshwater, Swimming, Identifiable):
             print(f'The Kikakapu devoured the {prey}')
         else:
             print(f'The Kikakapu hated the {prey}')
+
+    def __str__(self):
+        return f'Kikakapu {self.id}. Razorrr sharp teeth!'

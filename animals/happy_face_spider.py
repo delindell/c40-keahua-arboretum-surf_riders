@@ -1,12 +1,10 @@
 from animals import Animal
 from animals import Identifiable
-from animals.movements import Walking
 
-class HappyFaceSpider(Animal, Walking, Identifiable):
+class HappyFaceSpider(Animal, Identifiable):
 
-    def __init__(self, age):
-        Animal.__init__(self, "Happy Face Spider", age)
-        Walking.__init__(self)
+    def __init__(self):
+        Animal.__init__(self, "Happy Face Spider", 0.5)
         Identifiable.__init__(self)
         self.__prey = { "Crickets", "Worms", "Mosquitos", "Maggots" }
 

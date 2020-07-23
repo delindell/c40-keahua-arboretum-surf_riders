@@ -1,12 +1,10 @@
 from animals import Animal 
 from animals import Identifiable
-from animals.movements import Walking
 
-class Pueo(Animal, Walking, Identifiable):
+class Pueo(Animal, Identifiable):
 
-    def __init__(self, age):
-        Animal.__init__(self, "Pueo", age)
-        Walking.__init__(self)
+    def __init__(self):
+        Animal.__init__(self, "Pueo", 8)
         Identifiable.__init__(self)
         self.__prey = { "Rat", "Mouse", "Squirrel", "Naked Mole Rat" }
 

@@ -1,12 +1,10 @@
 from .animal import Animal
 from animals import Identifiable
-from animals.movements import Walking
 
-class GoldDustDayGecko(Animal, Walking, Identifiable):
+class GoldDustDayGecko(Animal, Identifiable):
 
-    def __init__(self, age):
-        Animal.__init__(self, "Gold Dust Day Gecko", age)
-        Walking.__init__(self)
+    def __init__(self):
+        Animal.__init__(self, "Gold Dust Day Gecko", 2)
         Identifiable.__init__(self)
         self.__prey = { "Crickets", "Worms", "Mosquitos", "Maggots" }
 

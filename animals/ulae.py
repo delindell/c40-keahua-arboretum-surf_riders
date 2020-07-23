@@ -1,14 +1,12 @@
 from animals import Animal
 from animals import Identifiable
 from animals.characteristics import Saltwater
-from animals.movements import Swimming
 
-class Ulae(Animal, Saltwater, Swimming, Identifiable):
+class Ulae(Animal, Saltwater, Identifiable):
 
-    def __init__(self, age):
-        Animal.__init__(self, "Ulae", age)
+    def __init__(self):
+        Animal.__init__(self, "Ulae", 1)
         Saltwater.__init__(self)
-        Swimming.__init__(self)
         Identifiable.__init__(self)
         self.__prey = { "Flounder", "Mino", "Goober Fish" }
 

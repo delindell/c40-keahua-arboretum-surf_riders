@@ -7,4 +7,4 @@ from .nene_goose import NeneGoose
 from .kikakapu import Kikakapu
 from .happy_face_spider import HappyFaceSpider
 from .gold_dust_day_gecko import GoldDustDayGecko
-
+from .opeapea import Opeapea
