@@ -9,7 +9,6 @@ from flora_fauna import Opeapea
 from flora_fauna import HappyFaceSpider
 
 def feed_animal(arboretum):
-    animal = None
     os.system('cls' if os.name == 'nt' else 'clear')
     print("1. River Dolphin")
     print("2. Gold Dust Day Gecko")
