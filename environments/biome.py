@@ -1,6 +1,8 @@
+from animals import Identifiable
 class Biome:
     
     def __init__(self, name, __capacity_animal=None, __capacity_plant=None):
+        Identifiable.__init__(self)
         self.name = name
         self.__capacity_animal = __capacity_animal # it will be declared at sub classes
         self.__capacity_plant = __capacity_plant # it will be declared at sub classes
