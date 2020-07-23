@@ -1,6 +1,6 @@
-from animals import Aquatic
+from .aquatic import Aquatic
 
-class Freshwater(Aquatic):
+class StagnantFreshWater(Aquatic):
 
     def __init__(self):
         super().__init__()
