@@ -1,4 +1,4 @@
 class Grassland:
 
     def __init__(self):
-        self.location = 'grassland'
+        self.grassland = True
