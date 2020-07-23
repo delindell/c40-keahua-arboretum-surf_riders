@@ -9,26 +9,22 @@ from animals import RiverDolphin
 # from animals import HappyFaceSpider
 
 def release_animal(arboretum):
-    animal = None
-    biome1 = None
-    biome2 = None
+    available_animals = ["River Dolphin", "Gold Dust Day Gecko", "Nene Goose", "Kīkākapu", "Pueo", "'Ulae", "Ope'ape'a", "Happy-Face Spider"]
+
     os.system('cls' if os.name == 'nt' else 'clear')
-    print("1. River Dolphin")
-    print("2. Gold Dust Day Gecko")
-    print("3. Nene Goose")
-    print("4. Kīkākapu")
-    print("5. Pueo")
-    print("6. 'Ulae")
-    print("7. Ope'ape'a")
-    print("8. Happy-Face Spider")
+
+    for index, animal in enumerate(available_animals):
+        print(f'{index + 1}. {animal}')
 
     print('\nChoose animal.')
     choice = input("> ")
+    choosing_which_animal(arboretum, choice)
 
+def choosing_which_animal(arboretum, choice):
     if choice == "1":
         animal = RiverDolphin()
         biome1 = arboretum.rivers
-        # biome2 = arboretum.coastline
+        # biome1 = arboretum.rivers + arboretum.coastline
     # if choice == "2":
     #     animal = GoldDustDayGecko()
     #     biome1 = arboretum.forest
@@ -37,35 +33,31 @@ def release_animal(arboretum):
     #     biome1 = arboretum.grasslands
     # if choice == "4":
     #     animal = Kikakapu()
-    #     biome1 = arboretum.swamps
-    #     biome2 = arboretum.rivers
+    #     biome1 = arboretum.swamps + arboretum.rivers
     # if choice == "5":
     #     animal = Pueo()
-    #     biome1 = arboretum.grasslands
-    #     biome2 = arboretum.forest
+    #     biome1 = arboretum.grasslands + arboretum.forest
     # if choice == "6":
     #     animal = Ulae()
     #     biome1 = arboretum.coastline
     # if choice == "7":
     #     animal = OpeApeA()
-    #     biome1 = arboretum.forests
-    #     biome2 = arboretum.mountains
+    #     biome1 = arboretum.forests + arboretum.mountains
     # if choice == "8":
     #     animal = HappyFaceSpider()
     #     biome1 = arboretum.swamps
 
-
     os.system('cls' if os.name == 'nt' else 'clear')
+    # replace 'River' and 'Coastline' with dynamic variable
     for index, value in enumerate(biome1):
         print(f'{index + 1}. River ({len(value.animals)} animals)')
-
-    if biome2:
-        for index, value in enumerate(biome1):
-            print(f'{index + 1}. Coastline {value.id}')
         
-
     print(f'\nWhere would you like to release the {animal.species}?')
     choice = input("> ")
 
-    arboretum.rivers[int(choice) - 1].animals.append(animal)
-    # or should it be added with the add_animal method on the environment module? Replacing append with add_animal.
+    animal_habitat = biome1[int(choice) - 1]
+
+    # find a way to add dynamically
+
+    # arboretum.rivers[int(choice) - 1].animals.append(animal)
+    arboretum.rivers[int(choice) - 1].add_animal(animal)

@@ -7,13 +7,10 @@ from environments import River
 # from environments import Forest
 
 def annex_habitat(arboretum):
+    biomes = ['River', 'Swamp', 'Coastline', 'Grassland', 'Mountain', 'Forest']
     os.system('cls' if os.name == 'nt' else 'clear')
-    print("1. River")
-    print("2. Swamp")
-    print("3. Coastline")
-    print("4. Grassland")
-    print("5. Mountain")
-    print("6. Forest")
+    for i, biome in enumerate(biomes):
+        print(f'{i + 1}. {biome}')
 
     print('\nChoose what you want to annex.')
     choice = input("> ")
