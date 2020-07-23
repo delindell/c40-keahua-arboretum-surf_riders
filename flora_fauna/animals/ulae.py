@@ -1,13 +1,13 @@
-from animals import Animal
-from animals import Identifiable
-from animals.characteristics import Saltwater
+from .animal import Animal
+from .identifiable import Identifiable
+from ..characteristics import Coastline
 
-class Ulae(Animal, Saltwater, Identifiable):
+class Ulae(Animal, Coastline, Identifiable):
 
     def __init__(self):
         Animal.__init__(self, "Ulae", 1)
-        Saltwater.__init__(self)
         Identifiable.__init__(self)
+        Coastline.__init__(self)
         self.__prey = { "Flounder", "Mino", "Goober Fish" }
 
     @property
