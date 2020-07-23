@@ -14,7 +14,7 @@ class Biome:
             self.__animal_population.append(animal)
             print("Animal added")
         else:
-            print(f"{self.name} is curentily at full capacity. Please find another place")
+            print(f"{self.name} is currently at full capacity. Please find another place")
 
 
     # Add animals to the list
@@ -22,16 +22,16 @@ class Biome:
         if len(self.__plant_population) < self.__capacity_plant:
             self.__animal_population.append(plant)
         else:
-            print(f"{self.name} is curentily at full capacity. Please find another place")
+            print(f"{self.name} is currently at full capacity. Please find another place")
 
 
     # Capacity Population of Animals
     @property
     def capacity_animal(self):
-        # try:
+        try:
             return self.__capacity_animal
-        # except AttributeError:
-        #     return 'Animal Capacity is out'
+        except AttributeError:
+            return 'Animal Capacity is out'
 
 
     @capacity_animal.setter
