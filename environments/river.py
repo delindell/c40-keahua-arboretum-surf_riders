@@ -1,12 +1,6 @@
-from environments.biome import Environment
-
-
-class River(Environment):
+from . import Biome
+class River(Biome):
 
     def __init__(self, name):
-        super().name = name
-        super().__capacity_animal = 6 # it will be declared at sub classes
-        super().__capacity_plant = 12 # it will be declared at sub classes
-
-r = River("river")
-print(r)
+        super().__init__(name, 12, 6)
+        self.fresh_water = True

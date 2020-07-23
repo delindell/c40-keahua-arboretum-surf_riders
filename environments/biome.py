@@ -1,10 +1,9 @@
-
-class Biomes:
+class Biome:
     
-    def __init__(self, name):
+    def __init__(self, name, __capacity_animal=None, __capacity_plant=None):
         self.name = name
-        self.__capacity_animal = None # it will be declared at sub classes
-        self.__capacity_plant = None # it will be declared at sub classes
+        self.__capacity_animal = __capacity_animal # it will be declared at sub classes
+        self.__capacity_plant = __capacity_plant # it will be declared at sub classes
         self.__animal_population = list()
         self.__plant_population = list()
 
@@ -29,10 +28,11 @@ class Biomes:
     # Capacity Population of Animals
     @property
     def capacity_animal(self):
-        try:
+        # try:
             return self.__capacity_animal
-        except AttributeError:
-            return 'Animal Capacity is out'
+        # except AttributeError:
+        #     return 'Animal Capacity is out'
+
 
     @capacity_animal.setter
     def capacity_animal(self):
