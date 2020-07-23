@@ -2,9 +2,9 @@ import os
 from arboretum import Arboretum
 from environments import Mountain
 from environments import River
-# from actions import annex_habitat
-# from actions.release_animal import release_animal
-# from actions.report import build_facility_report
+from actions import annex_habitat
+from actions.release_animal import release_animal
+from actions.report import build_facility_report
 
 keahua = Arboretum("Keahua Arboretum", "123 Paukauila Lane")
 
@@ -30,9 +30,7 @@ def main_menu():
     choice = input(">> ")
 
     if choice == "1":
-        r = River("River")
-        a = Mountain("Mountain")
-        print(r, a)
+        pass
 
     if choice == "2":
         pass
@@ -44,7 +42,7 @@ def main_menu():
         pass
 
     if choice == "5":
-        # build_facility_report(keahua)
+        build_facility_report(keahua)
         pass
 
     if choice != "6":
