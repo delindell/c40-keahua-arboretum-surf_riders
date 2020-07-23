@@ -1,14 +1,14 @@
-from animals import Animal
-from animals import Identifiable
-from animals.characteristics import StagnantFreshWater, Freshwater
+from .animal import Animal
+from .identifiable import Identifiable
+from ..characteristics import Swamp, River
 
-class Kikakapu(Animal, StagnantFreshWater, Freshwater, Identifiable):
+class Kikakapu(Animal, Swamp, River, Identifiable):
 
     def __init__(self):
         Animal.__init__(self, "Kikakapu", 1)
-        Freshwater.__init__(self)
-        StagnantFreshWater.__init__(self)
         Identifiable.__init__(self)
+        Swamp.__init__(self)
+        River.__init__(self)
         self.__prey = { "Trout", "Mackarel", "Salmon", "Sardine" }
 
     @property

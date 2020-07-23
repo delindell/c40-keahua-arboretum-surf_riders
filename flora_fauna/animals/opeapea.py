@@ -1,11 +1,14 @@
 from .animal import Animal
 from .identifiable import Identifiable
+from ..characteristics import Forest, Mountain
 
-class Opeapea(Animal, Identifiable):
+class Opeapea(Animal, Identifiable, Forest, Mountain):
 
     def __init__(self):
         Animal.__init__(self, "Opeapea", 5)
         Identifiable.__init__(self)
+        Forest.__init__(self)
+        Mountain.__init__(self)
         self.__prey = { "Crickets", "Worms", "Mosquitos", "Maggots" }
 
     @property
