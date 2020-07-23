@@ -38,18 +38,20 @@ def feed_animal(arboretum):
         animal = Opeapea()
     elif choice == "8":
         animal = HappyFaceSpider()
+    else:
+        os.system('cls' if os.name == 'nt' else 'clear')
+        print('Invalid Choice.')
+        input("\n\nPress any key to continue...")
+        return
 
     os.system('cls' if os.name == 'nt' else 'clear')
+
     for index, value in enumerate(animal.prey):
       print(f'{index + 1}. {value}')
-
 
     print(f'\nWhat is on the menu for the {animal.species}?')
     choice = input('> ')
     prey = list(animal.prey)
-
     os.system('cls' if os.name == 'nt' else 'clear')
-    
     animal.feed(prey[int(choice) - 1])
-
     input("\n\nPress any key to continue...")

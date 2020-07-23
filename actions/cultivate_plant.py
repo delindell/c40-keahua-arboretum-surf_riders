@@ -15,20 +15,25 @@ def cultivate_plant(arboretum):
     print('\nChoose plant to cultivate.')
     choice = input("> ")
 
-    if choice == "1":
+    elif choice == "1":
         plant = MountainTree()
-    if choice == "2":
+    elif choice == "2":
         plant = Silversword()
         biome1 = arboretum.grasslands
-    if choice == "3":
+    elif choice == "3":
         plant = RainbowTree()
-    if choice == "4":
+    elif choice == "4":
         plant = BlueJadeVine()
+    else:
+        os.system('cls' if os.name == 'nt' else 'clear')
+        print('Invalid Choice.')
+        input("\n\nPress any key to continue...")
+        return
 
     os.system('cls' if os.name == 'nt' else 'clear')
     
     for index, value in enumerate(biome1):
-        print(f'{index + 1}. Grassland ({len(value.plants)})')
+        print(f'{index + 1}. {value.name} ({len(value.plants)})')
 
     print(f'\nWhere would you like to cultivate the {plant.species}?')
     choice = input("> ")
