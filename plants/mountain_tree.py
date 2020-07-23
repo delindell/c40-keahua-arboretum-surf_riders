@@ -5,8 +5,6 @@ from .resistance import HighResistance
 class MountainTree(Plant, Partial, HighResistance):
 
     def __init__(self):
-        Plant.__init__(self, 'Mountain Apple Tree', 'year-round')
+        Plant.__init__(self, 'Mountain Apple Tree', 'year-round', 17)
         Partial.__init__(self)
         HighResistance.__init__(self)
-        self.seeds_produced = 17
-

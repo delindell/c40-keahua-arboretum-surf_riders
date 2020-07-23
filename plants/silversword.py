@@ -5,7 +5,6 @@ from .resistance import HighResistance
 class Silversword(Plant, Full, HighResistance):
 
     def __init__(self):
-        Plant.__init__(self, 'Silversword', 'summer')
+        Plant.__init__(self, 'Silversword', 'summer', 22)
         Full.__init__(self)
         HighResistance.__init__(self)
-        self.seeds_produced = 22
