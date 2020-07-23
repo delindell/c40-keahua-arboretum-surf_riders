@@ -1,4 +1,4 @@
-from animals import Identifiable
+from flora_fauna.animals import Identifiable
 class Biome:
     
     def __init__(self, name, __capacity_animal=None, __capacity_plant=None):

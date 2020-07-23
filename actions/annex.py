@@ -1,28 +1,40 @@
 import os
 from environments import River
-def annex_habitat(arboretum):
-    os.system('cls' if os.name == 'nt' else 'clear')
-    print("1. Mountain")
-    print("2. Swamp")
-    print("3. Grassland")
-    print("4. Forest")
-    print("5. River")
+from environments import Swamp
+from environments import Coastline
+from environments import Grassland
+from environments import Mountain
+from environments import Forest
 
-    choice = input("Choose your habitat > ")
+def annex_habitat(arboretum):
+    biomes = ['River', 'Swamp', 'Coastline', 'Grassland', 'Mountain', 'Forest']
+    os.system('cls' if os.name == 'nt' else 'clear')
+    for i, biome in enumerate(biomes):
+        print(f'{i + 1}. {biome}')
+
+    print('\nChoose what you want to annex.')
+    choice = input("> ")
 
     if choice == "1":
-        river = River()
+        river = River('River')
         arboretum.rivers.append(river)
-    if choice == "2":
-        pass
-
-## Expected output
-
-# 1. Mountain
-# 2. Swamp
-# 3. Grassland
-# 4. Forest
-# 5. River
-
-# Choose what you want to annex.
-# > _
+    elif choice == "2":
+        swamp = Swamp('Swamp')
+        arboretum.swamps.append(swamp)
+    elif choice == "3":
+        coastline = Coastline('Coastline')
+        arboretum.coastlines.append(coastline)
+    elif choice == "4":
+        grassland = Grassland('Grassland')
+        arboretum.grasslands.append(grassland)
+    elif choice == "5":
+        mountain = Mountain('Mountain')
+        arboretum.mountains.append(mountain)
+    elif choice == "6":
+        forest = Forest('Forest')
+        arboretum.forests.append(forest)
+    else:
+        os.system('cls' if os.name == 'nt' else 'clear')
+        print('Invalid Choice.')
+        input("\n\nPress any key to continue...")
+        return
