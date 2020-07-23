@@ -46,6 +46,11 @@ def choosing_which_animal(arboretum, choice):
     # if choice == "8":
     #     animal = HappyFaceSpider()
     #     biome1 = arboretum.swamps
+    else:
+        os.system('cls' if os.name == 'nt' else 'clear')
+        print('Invalid Choice.')
+        input("\n\nPress any key to continue...")
+        return
 
     os.system('cls' if os.name == 'nt' else 'clear')
     # replace 'River' and 'Coastline' with dynamic variable
@@ -55,9 +60,14 @@ def choosing_which_animal(arboretum, choice):
     print(f'\nWhere would you like to release the {animal.species}?')
     choice = input("> ")
 
+    if int(choice) > len(biome1):
+        os.system('cls' if os.name == 'nt' else 'clear')
+        print('Invalid Choice.')
+        input("\n\nPress any key to continue...")
+        return
+
     animal_habitat = biome1[int(choice) - 1]
 
     # find a way to add dynamically
 
-    # arboretum.rivers[int(choice) - 1].animals.append(animal)
     arboretum.rivers[int(choice) - 1].add_animal(animal)
