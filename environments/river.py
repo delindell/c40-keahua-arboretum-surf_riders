@@ -1,4 +1,4 @@
-from animals import Aquatic
+from animals.characteristics import Aquatic
 from animals import Identifiable
 from environments.contains_animals import ContainsAnimals
 from environments.contains_plants import ContainsPlants
