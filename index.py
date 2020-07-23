@@ -1,5 +1,7 @@
 import os
 from arboretum import Arboretum
+from environments import Mountain
+from environments import River
 from actions import annex_habitat
 from actions.release_animal import release_animal
 from actions.feed_animal import feed_animal

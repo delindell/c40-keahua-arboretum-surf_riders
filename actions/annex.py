@@ -1,10 +1,10 @@
 import os
 from environments import River
-# from environments import Swamp
-# from environments import Coastline
-# from environments import Grassland
-# from environments import Mountain
-# from environments import Forest
+from environments import Swamp
+from environments import Coastline
+from environments import Grassland
+from environments import Mountain
+from environments import Forest
 
 def annex_habitat(arboretum):
     biomes = ['River', 'Swamp', 'Coastline', 'Grassland', 'Mountain', 'Forest']
@@ -16,20 +16,25 @@ def annex_habitat(arboretum):
     choice = input("> ")
 
     if choice == "1":
-        river = River()
+        river = River('River')
         arboretum.rivers.append(river)
-    # if choice == "2":
-    #     swamp = Swamp()
-    #     arboretum.swaps.append(swamp)
-    # if choice == "3":
-    #     coastline = Coastline()
-    #     arboretum.coastline.append(coastline)
-    # if choice == "4":
-    #     grassland = Grassland()
-    #     arboretum.grasslands.append(grasslands)
-    # if choice == "5":
-    #     mountain = Mountain()
-    #     arboretum.mountains.append(mountain)
-    # if choice == "6":
-    #     forest = Forest()
-    #     arboretum.forest.append(forest)
+    elif choice == "2":
+        swamp = Swamp('Swamp')
+        arboretum.swamps.append(swamp)
+    elif choice == "3":
+        coastline = Coastline('Coastline')
+        arboretum.coastlines.append(coastline)
+    elif choice == "4":
+        grassland = Grassland('Grassland')
+        arboretum.grasslands.append(grassland)
+    elif choice == "5":
+        mountain = Mountain('Mountain')
+        arboretum.mountains.append(mountain)
+    elif choice == "6":
+        forest = Forest('Forest')
+        arboretum.forests.append(forest)
+    else:
+        os.system('cls' if os.name == 'nt' else 'clear')
+        print('Invalid Choice.')
+        input("\n\nPress any key to continue...")
+        return
