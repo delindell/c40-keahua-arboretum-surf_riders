@@ -19,38 +19,69 @@ def cultivate_plant(arboretum):
 def choose_plant(arboretum, choice):
     if choice == "1":
         plant = MountainTree()
+        habitats = ['Mountain']
         biome1 = arboretum.habitats['mountains']
     elif choice == "2":
         plant = Silversword()
+        habitats = ['Grassland']
         biome1 = arboretum.habitats['grasslands']
     elif choice == "3":
         plant = RainbowTree()
+        habitats = ['Forest']
         biome1 = arboretum.habitats['forests']
     elif choice == "4":
         plant = BlueJadeVine()
+        habitats = ['Grassland', 'Swamp']
         biome1 = arboretum.habitats['grasslands'] + arboretum.habitats['swamps']
     else:
         os.system('cls' if os.name == 'nt' else 'clear')
         print('Invalid Choice.')
         input("\n\nPress any key to continue...")
         return
-    find_biome(biome1, choice, plant, arboretum)
+    find_biome(biome1, choice, plant, arboretum, habitats)
 
-
-def find_biome(biome1, choice, plant, arboretum):
+def find_biome(biome1, choice, plant, arboretum, habitats):
     os.system('cls' if os.name == 'nt' else 'clear')
-    
-    for index, value in enumerate(biome1):
-        if len(value.plant_population) < value.capacity_plant:
-            print(f'{index + 1}. {value.name} [{value.id}] ({len(value.plant_population)} plants)')
+    checking_for_habitats = 0
+    checking_max_population = 0
+    arr_of_max_biomes = list()
 
-    print(f'\nWhere would you like to cultivate the {plant.species}?')
+    list_disponible = list()
+
+    for index, value in enumerate(biome1):
+        if len(value.plant_population) == value.capacity_plant:
+            checking_max_population += 1
+            arr_of_max_biomes.append(value)
+        elif len(value.plant_population) < value.capacity_plant:
+            list_disponible.append(value)
+            checking_for_habitats += 1
+    for bio in list_disponible:
+        print(f'{list_disponible.index(bio)+1}. {bio.name} [{bio.id}] ({len(bio.plant_population)} plants)')
+
+    biome1 = list_disponible
+
+    if checking_for_habitats == 0:
+        os.system('cls' if os.name == 'nt' else 'clear')
+        if checking_max_population > 0:
+            for value in arr_of_max_biomes:
+                print(f'The {value.name} biome is full. Please create another for the {plant.species}')
+        elif len(habitats) > 1:
+                print(f'No biomes available. \nThese are the available biomes to create for the {plant.species}:\n')
+                for habitat in habitats:
+                    print(f'{habitat}')
+        else:
+            print(f'No biomes available.\nPlease create a {habitats[0]} biome for the {plant.species}')
+        input("\n\nPress any key to continue...")
+        return
+                    
+        
+    print(f'\nWhere would you like to release the {plant.species}?')
     choice = input("> ")
 
     try:
-        plant_habitat = biome1[int(choice) - 1].name.lower() + 's'
+        plant_habitat = list_disponible[int(choice) - 1].name.lower() + 's'
         for index, val in enumerate(arboretum.habitats[plant_habitat]):
-            if biome1[int(choice) - 1].id == val.id:
+            if list_disponible[int(choice) - 1].id == val.id:
                 arboretum.habitats[plant_habitat][index].addPlants(plant)
     except ValueError:
         os.system('cls' if os.name == 'nt' else 'clear')
