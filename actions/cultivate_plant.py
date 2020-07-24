@@ -54,22 +54,11 @@ def find_biome(biome1, choice, plant, arboretum):
                 arboretum.habitats[plant_habitat][index].addPlants(plant)
     except ValueError:
         os.system('cls' if os.name == 'nt' else 'clear')
-        print('Invalid Choice.')
+        print('Your choice was not a valid input.')
         input("\n\nPress any key to continue...")
         return
     except IndexError:
         os.system('cls' if os.name == 'nt' else 'clear')
-        print('Invalid Choice.')
+        print('Your choice is not in the range of choices.')
         input("\n\nPress any key to continue...")
         return
-
-    # if choice == '' or int(choice) > len(biome1):
-    #     os.system('cls' if os.name == 'nt' else 'clear')
-    #     print('Invalid Choice.')
-    #     input("\n\nPress any key to continue...")
-    #     return
-    # else:
-    #     plant_habitat = biome1[int(choice) - 1].name.lower() + 's'
-    #     for index, val in enumerate(arboretum.habitats[plant_habitat]):
-    #         if biome1[int(choice) - 1].id == val.id:
-    #             arboretum.habitats[plant_habitat][index].addPlants(plant)
