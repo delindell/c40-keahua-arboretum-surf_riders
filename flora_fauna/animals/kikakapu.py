@@ -1,12 +1,10 @@
 from .animal import Animal
-from .identifiable import Identifiable
 from ..characteristics import Swamp, River
 
-class Kikakapu(Animal, Swamp, River, Identifiable):
+class Kikakapu(Animal, Swamp, River):
 
     def __init__(self):
         Animal.__init__(self, "Kikakapu", 1)
-        Identifiable.__init__(self)
         Swamp.__init__(self)
         River.__init__(self)
         self.__prey = { "Trout", "Mackarel", "Salmon", "Sardine" }

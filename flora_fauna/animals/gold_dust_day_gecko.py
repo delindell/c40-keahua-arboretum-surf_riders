@@ -1,12 +1,10 @@
 from .animal import Animal
-from .identifiable import Identifiable
 from ..characteristics import Forest
 
-class GoldDustDayGecko(Animal, Identifiable, Forest):
+class GoldDustDayGecko(Animal, Forest):
 
     def __init__(self):
         Animal.__init__(self, "Gold Dust Day Gecko", 2)
-        Identifiable.__init__(self)
         Forest.__init__(self)
         self.__prey = { "Crickets", "Worms", "Mosquitos", "Maggots" }
 
