@@ -68,14 +68,20 @@ def finding_which_biome(biome1, choice, animal, arboretum, habitats):
     checking_for_habitats = 0
     checking_max_population = 0
     arr_of_max_biomes = list()
+
+    list_disponible = list()
+
     for index, value in enumerate(biome1):
         if len(value.animal_population) == value.capacity_animal:
             checking_max_population += 1
             arr_of_max_biomes.append(value)
         elif len(value.animal_population) < value.capacity_animal:
+            list_disponible.append(value)
             checking_for_habitats += 1
-            print(f'{index + 1}. {value.name} [{value.id}] ({len(value.animal_population)} animals)')
+    for bio in list_disponible:
+        print(f'{list_disponible.index(bio)+1}. {bio.name} [{bio.id}] ({len(bio.animal_population)} animals)')
 
+    biome1 = list_disponible
 
     if checking_for_habitats == 0:
         os.system('cls' if os.name == 'nt' else 'clear')
@@ -96,9 +102,9 @@ def finding_which_biome(biome1, choice, animal, arboretum, habitats):
     choice = input("> ")
 
     try:
-        animal_habitat = biome1[int(choice) - 1].name.lower() + 's'
+        animal_habitat = list_disponible[int(choice) - 1].name.lower() + 's'
         for index, val in enumerate(arboretum.habitats[animal_habitat]):
-            if biome1[int(choice) - 1].id == val.id:
+            if list_disponible[int(choice) - 1].id == val.id:
                 arboretum.habitats[animal_habitat][index].addAnimal(animal)
     except ValueError:
         os.system('cls' if os.name == 'nt' else 'clear')
