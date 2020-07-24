@@ -1,12 +1,10 @@
 from .animal import Animal
-from .identifiable import Identifiable
 from ..characteristics import Grassland
 
-class NeneGoose(Animal, Identifiable, Grassland):
+class NeneGoose(Animal, Grassland):
 
     def __init__(self):
         Animal.__init__(self, "Nene Goose", 7)
-        Identifiable.__init__(self)
         Grassland.__init__(self)
         self.__prey = { "Silversword", "Grass", "Blue Jade Vine",
         "Eucalyptus" }

@@ -1,4 +1,4 @@
-from ..animals.identifiable import Identifiable
+from flora_fauna.animals import Identifiable
 
 class Plant(Identifiable):
 

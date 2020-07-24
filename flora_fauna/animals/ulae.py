@@ -1,12 +1,10 @@
 from .animal import Animal
-from .identifiable import Identifiable
 from ..characteristics import Coastline
 
-class Ulae(Animal, Coastline, Identifiable):
+class Ulae(Animal, Coastline):
 
     def __init__(self):
         Animal.__init__(self, "Ulae", 1)
-        Identifiable.__init__(self)
         Coastline.__init__(self)
         self.__prey = { "Flounder", "Mino", "Goober Fish" }
 
