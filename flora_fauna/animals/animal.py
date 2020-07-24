@@ -1,3 +1,5 @@
+from .identifiable import Identifiable
+
 class Animal:
 
     def __init__(self, species, age):
