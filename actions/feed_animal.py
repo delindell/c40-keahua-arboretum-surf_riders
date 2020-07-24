@@ -21,7 +21,10 @@ def feed_animal(arboretum):
 
     print('\nChoose animal to feed.')
     choice = input("> ")
+    choosing_animal(arboretum, choice)
 
+
+def choosing_animal(arboretum, choice):
     if choice == "1":
         animal = RiverDolphin()
     elif choice == "2":
@@ -43,7 +46,10 @@ def feed_animal(arboretum):
         print('Invalid Choice.')
         input("\n\nPress any key to continue...")
         return
+    feeding_time(arboretum, animal)
 
+
+def feeding_time(arboretum, animal):
     os.system('cls' if os.name == 'nt' else 'clear')
 
     for index, value in enumerate(animal.prey):
@@ -51,7 +57,14 @@ def feed_animal(arboretum):
 
     print(f'\nWhat is on the menu for the {animal.species}?')
     choice = input('> ')
-    prey = list(animal.prey)
     os.system('cls' if os.name == 'nt' else 'clear')
-    animal.feed(prey[int(choice) - 1])
-    input("\n\nPress any key to continue...")
+
+    if int(choice) < len(animal.prey):
+        prey = list(animal.prey)
+        animal.feed(prey[int(choice) - 1])
+        input("\n\nPress any key to continue...")
+    else:
+        print('Invalid Choice.')
+        input("\n\nPress any key to continue...")
+        return
+        
