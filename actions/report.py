@@ -5,10 +5,8 @@ def build_facility_report(arboretum):
     for key, value in arboretum.habitats.items():
         print(key, value)
         for item in value:
-            print('Animals')
             for index, animal in enumerate(item.animal_population):
                 print(f'  {index + 1}. {animal.species}')
-            print('Plants')
             for index, plant in enumerate(item.plant_population):
                 print(f'  {index + 1}. {plant.species}')
 

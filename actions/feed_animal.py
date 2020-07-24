@@ -58,12 +58,12 @@ def feeding_time(arboretum, animal):
     print(f'\nWhat is on the menu for the {animal.species}?')
     choice = input('> ')
     os.system('cls' if os.name == 'nt' else 'clear')
-
-    if int(choice) < len(animal.prey):
-        prey = list(animal.prey)
-        animal.feed(prey[int(choice) - 1])
-        input("\n\nPress any key to continue...")
-    else:
+    try:
+        if int(choice) < len(animal.prey):
+            prey = list(animal.prey)
+            animal.feed(prey[int(choice) - 1])
+            input("\n\nPress any key to continue...")
+    except ValueError as ex:
         print('Invalid Choice.')
         input("\n\nPress any key to continue...")
         return
