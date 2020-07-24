@@ -80,18 +80,4 @@ def finding_which_biome(biome1, choice, animal, arboretum):
         print('Your choice is not in the range of choices.')
         input("\n\nPress any key to continue...")
         return
-
-    # if choice == '' or int(choice) > len(biome1):
-    #     os.system('cls' if os.name == 'nt' else 'clear')
-    #     print('Invalid Choice.')
-    #     input("\n\nPress any key to continue...")
-    #     return
-    # else:
-    #     animal_habitat = biome1[int(choice) - 1].name.lower() + 's'
-    #     for index, val in enumerate(arboretum.habitats[animal_habitat]):
-    #         if biome1[int(choice) - 1].id == val.id:
-    #             arboretum.habitats[animal_habitat][index].addAnimal(animal)
-        
-    # find_index = [i if biome1[int(choice) - 1].id == val.id else -1 for i, val in enumerate(arboretum.habitats[animal_habitat])][0]
-    # arboretum.habitats[animal_habitat][find_index].addAnimal(animal)
         
