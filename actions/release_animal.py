@@ -67,19 +67,26 @@ def finding_which_biome(biome1, choice, animal, arboretum, habitats):
     os.system('cls' if os.name == 'nt' else 'clear')
     checking_for_habitats = 0
     checking_for_max_population = 0
+    arr_of_max_biomes = list()
     for index, value in enumerate(biome1):
         if len(value.animal_population) < value.capacity_animal:
             checking_for_habitats += 1
             print(f'{index + 1}. {value.name} [{value.id}] ({len(value.animal_population)} animals)')
         elif len(value.animal_poplation) == value.capacity_animal:
-            checking_max_population += value.name
+            checking_max_population += 1
+            arr_of_max_biomes.append(value)
+
+    if checking_for_max_population > 0:
+        os.system('cls' if os.name == 'nt' else 'clear')
+        for value in arr_of_max_biomes:
+            print(f'The {value.name} biome is full. Please create another for the {animal.species}')
 
     if checking_for_habitats == 0:
         os.system('cls' if os.name == 'nt' else 'clear')
-        if checking_for_mac_population != 0:
-            print(f'The ')
-        elif len(habitats) > 1:
-            print(f'No biomes available. Please create a {habitats[0]} biome or a {habitats[1]} biome for the {animal.species}')
+        if len(habitats) > 1:
+                print(f'No biomes available. These are the available biomes to create for the {animal.species}')
+            for habitat in habitats:
+                print(f'{habitat}')
         else:
             print(f'No biomes available. Please create a {habitats[0]} for the {animal.species}')
         input("\n\nPress any key to continue...")
