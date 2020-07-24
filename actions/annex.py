@@ -14,7 +14,9 @@ def annex_habitat(arboretum):
 
     print('\nChoose what you want to annex.')
     choice = input("> ")
+    choosing_habitat(arboretum, choice)
 
+def choosing_habitat(arboretum, choice):
     if choice == "1":
         river = River('River')
         arboretum.habitats['rivers'].append(river)

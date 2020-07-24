@@ -22,7 +22,7 @@ class Biome:
     # Add animals to the list
     def addPlants(self, plant):
         if len(self.__plant_population) < self.__capacity_plant:
-            self.__animal_population.append(plant)
+            self.__plant_population.append(plant)
         else:
             print(f"{self.name} is currently at full capacity. Please find another place")
 
