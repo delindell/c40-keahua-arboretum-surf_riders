@@ -1,12 +1,10 @@
 from .animal import Animal
-from .identifiable import Identifiable
 from ..characteristics import Grassland, Forest
 
-class Pueo(Animal, Identifiable, Grassland, Forest):
+class Pueo(Animal, Grassland, Forest):
 
     def __init__(self):
         Animal.__init__(self, "Pueo", 8)
-        Identifiable.__init__(self)
         Grassland.__init__(self)
         Forest.__init__(self)
         self.__prey = { "Rat", "Mouse", "Squirrel", "Naked Mole Rat" }

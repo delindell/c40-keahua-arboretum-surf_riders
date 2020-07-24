@@ -1,12 +1,10 @@
 from .animal import Animal
-from .identifiable import Identifiable
 from ..characteristics import Swamp
 
-class HappyFaceSpider(Animal, Identifiable, Swamp):
+class HappyFaceSpider(Animal, Swamp):
 
     def __init__(self):
         Animal.__init__(self, "Happy Face Spider", 0.5)
-        Identifiable.__init__(self)
         Swamp.__init__(self)
         self.__prey = { "Crickets", "Worms", "Mosquitos", "Maggots" }
 
