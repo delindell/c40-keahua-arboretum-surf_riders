@@ -24,27 +24,35 @@ def release_animal(arboretum):
 def choosing_which_animal(arboretum, choice):
     if choice == "1":
         animal = RiverDolphin()
+        habitats = ['River', 'Coastline']
         biome1 = arboretum.habitats["rivers"] + arboretum.habitats["coastlines"]
     elif choice == "2":
         animal = GoldDustDayGecko()
+        habitats = ['Forest']
         biome1 = arboretum.habitats["forests"]
     elif choice == "3":
         animal = NeneGoose()
+        habitats = ['Grassland']
         biome1 = arboretum.habitats["grasslands"]
     elif choice == "4":
         animal = Kikakapu()
+        habitats = ['Swamp', 'River']
         biome1 = arboretum.habitats["swamps"] + arboretum.habitats["rivers"]
     elif choice == "5":
         animal = Pueo()
+        habitats = ['Grassland', 'Forest']
         biome1 = arboretum.habitats["grasslands"] + arboretum.habitats["forests"]
     elif choice == "6":
         animal = Ulae()
+        habitats = ['Coastline']
         biome1 = arboretum.habitats["coastlines"]
     elif choice == "7":
         animal = Opeapea()
+        habitats = ['Forest', 'Mountain']
         biome1 = arboretum.habitats["forests"] + arboretum.habitats["mountains"]
     elif choice == "8":
         animal = HappyFaceSpider()
+        habitats = ['Swamp']
         biome1 = arboretum.habitats["swamps"]
     else:
         os.system('cls' if os.name == 'nt' else 'clear')
@@ -52,15 +60,31 @@ def choosing_which_animal(arboretum, choice):
         input("\n\nPress any key to continue...")
         return
         
-    finding_which_biome(biome1, choice, animal, arboretum)
+    finding_which_biome(biome1, choice, animal, arboretum, habitats)
 
 
-def finding_which_biome(biome1, choice, animal, arboretum):
+def finding_which_biome(biome1, choice, animal, arboretum, habitats):
     os.system('cls' if os.name == 'nt' else 'clear')
-
+    checking_for_habitats = 0
+    checking_for_max_population = 0
     for index, value in enumerate(biome1):
         if len(value.animal_population) < value.capacity_animal:
+            checking_for_habitats += 1
             print(f'{index + 1}. {value.name} [{value.id}] ({len(value.animal_population)} animals)')
+        elif len(value.animal_poplation) == value.capacity_animal:
+            checking_max_population += value.name
+
+    if checking_for_habitats == 0:
+        os.system('cls' if os.name == 'nt' else 'clear')
+        if checking_for_mac_population != 0:
+            print(f'The ')
+        elif len(habitats) > 1:
+            print(f'No biomes available. Please create a {habitats[0]} biome or a {habitats[1]} biome for the {animal.species}')
+        else:
+            print(f'No biomes available. Please create a {habitats[0]} for the {animal.species}')
+        input("\n\nPress any key to continue...")
+        return
+                    
         
     print(f'\nWhere would you like to release the {animal.species}?')
     choice = input("> ")
