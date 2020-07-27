@@ -55,9 +55,4 @@ def main_menu():
     if choice != "6":
         main_menu()
 
-print('Jurassic Arboretum, System Security Interface')
-print('Version 4.0.5, Alpha E')
-print('Ready...')
-time.sleep(3)
-loader.load('.', 15, )
 main_menu()
