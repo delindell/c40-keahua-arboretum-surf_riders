@@ -19,7 +19,7 @@ def release(arboretum, name):
     choosing_which_species(arboretum, choice, name)
 
 
-# The choosing which species function will record the users choice
+# The choosing_which_species function will record the users choice
 def choosing_which_species(arboretum, choice, name):
     if name == 'animal':
         if choice == "1":
@@ -69,7 +69,7 @@ def choosing_which_species(arboretum, choice, name):
     finding_which_biome(biomes, choice, species, arboretum, name)
 
 
-# The finding which biome function will ask the user where they would like to release an animal or cultivate a plant
+# The finding_which_biome function will ask the user where they would like to release an animal or cultivate a plant
 # Once the user decides, it will add that plant or animal to the targeted biome
 def finding_which_biome(biomes, choice, species, arboretum, name):
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -130,7 +130,7 @@ def finding_which_biome(biomes, choice, species, arboretum, name):
         return
 
 
-# The blank screen error is called on in the finding which biome function to display a propmt to let the user know why there was nothing displayed
+# The blank_screen_error is called on in the finding_which_biome function to display a propmt to let the user know why there was nothing displayed
 def blank_screen_error(checking_max_population, arr_of_max_biomes, species):
     os.system('cls' if os.name == 'nt' else 'clear')
     if checking_max_population > 0:
