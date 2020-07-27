@@ -7,6 +7,13 @@ from actions.release_animal import release_animal
 from actions.feed_animal import feed_animal
 from actions.cultivate_plant import cultivate_plant
 from actions.report import build_facility_report
+from actions import Colors
+from actions import Colorizer
+from actions import Loading
+
+colors = Colors()
+colorizer = Colorizer()
+loader = Loading()
 
 keahua = Arboretum("Keahua Arboretum", "123 Paukauila Lane")
 
