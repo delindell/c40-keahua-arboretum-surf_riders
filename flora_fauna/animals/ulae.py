@@ -7,6 +7,7 @@ class Ulae(Animal, Coastline):
         Animal.__init__(self, "Ulae", 1)
         Coastline.__init__(self)
         self.__prey = { "Flounder", "Mino", "Goober Fish" }
+        self.habitats = ['Coastline']
 
     @property
     def prey(self):

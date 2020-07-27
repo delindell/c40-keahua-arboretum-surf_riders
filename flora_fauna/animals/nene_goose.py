@@ -8,6 +8,7 @@ class NeneGoose(Animal, Grassland):
         Grassland.__init__(self)
         self.__prey = { "Silversword", "Grass", "Blue Jade Vine",
         "Eucalyptus" }
+        self.habitats = ['Grassland']
 
     @property
     def prey(self):

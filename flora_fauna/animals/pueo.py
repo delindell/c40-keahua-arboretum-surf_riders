@@ -8,6 +8,7 @@ class Pueo(Animal, Grassland, Forest):
         Grassland.__init__(self)
         Forest.__init__(self)
         self.__prey = { "Rat", "Mouse", "Squirrel", "Naked Mole Rat" }
+        self.habitats = ['Grassland', 'Forest']
 
     @property
     def prey(self):

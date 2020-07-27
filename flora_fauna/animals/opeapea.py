@@ -8,6 +8,7 @@ class Opeapea(Animal, Forest, Mountain):
         Forest.__init__(self)
         Mountain.__init__(self)
         self.__prey = { "Crickets", "Worms", "Mosquitos", "Maggots" }
+        self.habitats = ['Forest', 'Mountain']
 
     @property
     def prey(self):
