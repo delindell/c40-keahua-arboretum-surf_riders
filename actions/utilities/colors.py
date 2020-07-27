@@ -12,6 +12,8 @@ class Colors:
             'OKGREEN': '\033[92m',
             'WARNING': '\033[93m',
             'FAIL': '\033[91m',
+            'BLACK': '\u001b[30m',
+            'GREEN': '\u001b[32m'
         }
         self.background_colors = {
             'BLACK': '\u001b[40m',
