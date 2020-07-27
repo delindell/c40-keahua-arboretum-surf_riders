@@ -7,6 +7,7 @@ class GoldDustDayGecko(Animal, Forest):
         Animal.__init__(self, "Gold Dust Day Gecko", 2)
         Forest.__init__(self)
         self.__prey = { "Crickets", "Worms", "Mosquitos", "Maggots" }
+        self.habitats = ['Forest']
 
     @property
     def prey(self):

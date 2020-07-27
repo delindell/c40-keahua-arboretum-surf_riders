@@ -8,6 +8,7 @@ class Kikakapu(Animal, Swamp, River):
         Swamp.__init__(self)
         River.__init__(self)
         self.__prey = { "Trout", "Mackarel", "Salmon", "Sardine" }
+        self.habitats = ['Swamp', 'River']
 
     @property
     def prey(self):

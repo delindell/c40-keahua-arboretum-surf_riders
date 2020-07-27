@@ -11,20 +11,20 @@ class Biome:
 
 
     # Add animals to the list
-    def addAnimal(self, animal):
-        if len(self.__animal_population) < self.__capacity_animal:
-            self.__animal_population.append(animal)
-            print("Animal added")
-        else:
-            print(f"{self.name} is currently at full capacity. Please find another place")
+    # def addAnimal(self, animal):
+    #     if len(self.__animal_population) < self.__capacity_animal:
+    #         self.__animal_population.append(animal)
+    #         print("Animal added")
+    #     else:
+    #         print(f"{self.name} is currently at full capacity. Please find another place")
 
 
     # Add animals to the list
-    def addPlants(self, plant):
-        if len(self.__plant_population) < self.__capacity_plant:
-            self.__plant_population.append(plant)
-        else:
-            print(f"{self.name} is currently at full capacity. Please find another place")
+    # def addPlants(self, plant):
+    #     if len(self.__plant_population) < self.__capacity_plant:
+    #         self.__plant_population.append(plant)
+    #     else:
+    #         print(f"{self.name} is currently at full capacity. Please find another place")
 
 
     # Capacity Population of Animals

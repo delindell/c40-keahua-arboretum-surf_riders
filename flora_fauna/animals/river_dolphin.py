@@ -8,6 +8,7 @@ class RiverDolphin(Animal, River, Coastline):
         River.__init__(self)
         Coastline.__init__(self)
         self.__prey = { "Trout", "Mackarel", "Salmon", "Sardine" }
+        self.habitats = ['River', 'Coastline']
 
     @property
     def prey(self):

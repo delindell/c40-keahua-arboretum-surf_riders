@@ -10,3 +10,4 @@ class RainbowTree(Plant, Shade, LowResistance, Forest):
         Shade.__init__(self)
         LowResistance.__init__(self)
         Forest.__init__(self)
+        self.habitats = ['Forest']
