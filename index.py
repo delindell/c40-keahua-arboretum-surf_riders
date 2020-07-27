@@ -1,4 +1,5 @@
 import os
+import time
 from arboretum import Arboretum
 from environments import Mountain
 from environments import River
@@ -7,6 +8,13 @@ from actions.release_animal import release_animal
 from actions.feed_animal import feed_animal
 from actions.cultivate_plant import cultivate_plant
 from actions.report import build_facility_report
+from actions import Colors
+from actions import Colorizer
+from actions import Loading
+
+colors = Colors()
+colorizer = Colorizer()
+loader = Loading()
 
 keahua = Arboretum("Keahua Arboretum", "123 Paukauila Lane")
 
@@ -50,4 +58,9 @@ def main_menu():
     if choice != "6":
         main_menu()
 
+print('Jurassic Arboretum, System Security Interface')
+print('Version 4.0.5, Alpha E')
+print('Ready...')
+time.sleep(3)
+loader.load('.', 15, )
 main_menu()
