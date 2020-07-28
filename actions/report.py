@@ -1,7 +1,19 @@
 import os
+from actions import Colors
+from actions import Colorizer
+from actions import Loading
+from actions import Typer
+
+colors = Colors()
+colorizer = Colorizer()
+loader = Loading()
+typer = Typer()
 
 def build_facility_report(arboretum):
     os.system('cls' if os.name == 'nt' else 'clear')
+    print(colorizer.colorize('+-++-++-++-++-++-++-++-++-+ +-++-++-++-++-++-+', colors.text_colors['OKGREEN'], '', ''))
+    print(colorizer.colorize('|A||r||b||o||r||e||t||u||m| |R||e||p||o||r||t|', colors.text_colors['HEADER'], colors.background_colors['BLUE'], colors.effects['BOLD']))
+    print(colorizer.colorize('+-++-++-++-++-++-++-++-++-+ +-++-++-++-++-++-+', colors.text_colors['OKGREEN'], '', ''))
     empty_list = 1
     for key, habitats in arboretum.habitats.items():
         if len(habitats) == 0:

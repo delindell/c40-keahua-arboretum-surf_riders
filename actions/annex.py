@@ -5,16 +5,31 @@ from environments import Coastline
 from environments import Grassland
 from environments import Mountain
 from environments import Forest
+from actions.utilities import Colorizer
+from actions.utilities import Colors
+from actions.utilities import Loading
+from actions.utilities import Typer
+
+colorizer = Colorizer()
+colors = Colors()
 
 def annex_habitat(arboretum):
+
     biomes = ['River', 'Swamp', 'Coastline', 'Grassland', 'Mountain', 'Forest']
     os.system('cls' if os.name == 'nt' else 'clear')
+
+    
+    print(colorizer.colorize('+-++-++-++-++-+ +-++-++-++-++-+', colors.text_colors['OKGREEN'], '', ''))
+    print(colorizer.colorize('|A||n||n||e||x| |b||i||o||m||e|', colors.text_colors['HEADER'], colors.background_colors['BLUE'], colors.effects['BOLD']))
+    print(colorizer.colorize('+-++-++-++-++-+ +-++-++-++-++-+', colors.text_colors['OKGREEN'], '', ''))
+
     for i, biome in enumerate(biomes):
         print(f'{i + 1}. {biome}')
 
-    print('\nChoose what you want to annex.')
+    print(colorizer.colorize('\nChoose what you want to annex.', colors.text_colors['WARNING'], '', ''))
     choice = input("> ")
     choosing_habitat(arboretum, choice)
+
 
 def choosing_habitat(arboretum, choice):
     if choice == "1":
@@ -37,6 +52,6 @@ def choosing_habitat(arboretum, choice):
         arboretum.habitats['forests'].append(forest)
     else:
         os.system('cls' if os.name == 'nt' else 'clear')
-        print('Invalid Choice.')
-        input("\n\nPress any key to continue...")
+        print(colorizer.colorize('\nInvalid Choice.', colors.text_colors['FAIL'], '', ''))
+        input("\nPress any key to continue...")
         return

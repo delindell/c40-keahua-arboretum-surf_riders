@@ -7,9 +7,23 @@ from flora_fauna import Pueo
 from flora_fauna import Ulae
 from flora_fauna import Opeapea
 from flora_fauna import HappyFaceSpider
+from actions.utilities import Colorizer
+from actions.utilities import Colors
+from actions.utilities import Loading
+from actions.utilities import Typer
+
+
+colorizer = Colorizer()
+colors = Colors()
 
 def feed_animal(arboretum):
     os.system('cls' if os.name == 'nt' else 'clear')
+
+     
+    print(colorizer.colorize('+-++-++-++-++-+ +-++-++-++-++-+', colors.text_colors['OKGREEN'], '', ''))
+    print(colorizer.colorize('|F||e||e||d| |a||n||i||m||a||l|', colors.text_colors['HEADER'], colors.background_colors['BLUE'], colors.effects['BOLD']))
+    print(colorizer.colorize('+-++-++-++-++-+ +-++-++-++-++-+', colors.text_colors['OKGREEN'], '', ''))
+
     print("1. River Dolphin")
     print("2. Gold Dust Day Gecko")
     print("3. Nene Goose")
@@ -19,7 +33,7 @@ def feed_animal(arboretum):
     print("7. Ope'ape'a")
     print("8. Happy-Face Spider")
 
-    print('\nChoose animal to feed.')
+    print(colorizer.colorize('\nChoose animal to feed.', colors.text_colors['WARNING'], '', ''))
     choice = input("> ")
     choosing_animal(arboretum, choice)
 
@@ -43,7 +57,7 @@ def choosing_animal(arboretum, choice):
         animal = HappyFaceSpider()
     else:
         os.system('cls' if os.name == 'nt' else 'clear')
-        print('Invalid Choice.')
+        print(colorizer.colorize('\nInvalid Choice.', colors.text_colors['FAIL'], '', ''))
         input("\n\nPress any key to continue...")
         return
     feeding_time(arboretum, animal)
@@ -64,7 +78,7 @@ def feeding_time(arboretum, animal):
             animal.feed(prey[int(choice) - 1])
             input("\n\nPress any key to continue...")
     except ValueError as ex:
-        print('Invalid Choice.')
+        print(colorizer.colorize('\nInvalid Choice.', colors.text_colors['FAIL'], '', ''))
         input("\n\nPress any key to continue...")
         return
         
