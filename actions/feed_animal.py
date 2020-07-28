@@ -15,6 +15,7 @@ from actions.utilities import Typer
 
 colorizer = Colorizer()
 colors = Colors()
+loading = Loading()
 
 def feed_animal(arboretum):
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -73,7 +74,9 @@ def feeding_time(arboretum, animal):
     choice = input('> ')
     os.system('cls' if os.name == 'nt' else 'clear')
     try:
-        if int(choice) < len(animal.prey):
+        if int(choice) <= len(animal.prey):
+            print(colorizer.colorize('Feeding animal...', colors.text_colors['OKBLUE'], '', ''))
+            loading.load('#', 30, 0.05, colorizer.colorize('\nSuccessfully fed 👍\n', colors.text_colors['OKGREEN'], '', ''))
             prey = list(animal.prey)
             animal.feed(prey[int(choice) - 1])
             input("\n\nPress any key to continue...")
