@@ -1,5 +1,12 @@
 import os
 from flora_fauna import RiverDolphin, GoldDustDayGecko, NeneGoose, Kikakapu, Pueo, Ulae, Opeapea, HappyFaceSpider, MountainTree, Silversword, RainbowTree, BlueJadeVine
+from actions.utilities import Colorizer
+from actions.utilities import Colors
+from actions.utilities import Loading
+from actions.utilities import Typer
+
+colorizer = Colorizer()
+colors = Colors()
 
 # The release function will decide whether to display animals or plants
 def release(arboretum, name):
@@ -10,10 +17,14 @@ def release(arboretum, name):
 
     os.system('cls' if os.name == 'nt' else 'clear')
 
+    print(colorizer.colorize('+-++-++-++-++-++-++-+', colors.text_colors['OKGREEN'], '', ''))
+    print(colorizer.colorize('|R||e||l||e||a||s||e|', colors.text_colors['HEADER'], colors.background_colors['BLUE'], colors.effects['BOLD']))
+    print(colorizer.colorize('+-++-++-++-++-++-++-+', colors.text_colors['OKGREEN'], '', ''))
+
     for index, value in enumerate(arr_avail_species):
         print(f'{index + 1}. {value}')
 
-    print(f'\nChoose which {name}.')   
+    print(colorizer.colorize(f'\nChoose which {name}.', colors.text_colors['WARNING'], '', ''))   
     choice = input("> ")
 
     choosing_which_species(arboretum, choice, name)
@@ -40,7 +51,7 @@ def choosing_which_species(arboretum, choice, name):
             species = HappyFaceSpider()
         else:
             os.system('cls' if os.name == 'nt' else 'clear')
-            print('Invalid Choice.')
+            print(colorizer.colorize('\nInvalid Choice.', colors.text_colors['FAIL'], '', ''))
             input("\n\nPress any key to continue...")
             return
     else:
@@ -54,7 +65,7 @@ def choosing_which_species(arboretum, choice, name):
             species = BlueJadeVine()
         else:
             os.system('cls' if os.name == 'nt' else 'clear')
-            print('Invalid Choice.')
+            print(colorizer.colorize('\nInvalid Choice.', colors.text_colors['FAIL'], '', ''))
             input("\n\nPress any key to continue...")
             return
 

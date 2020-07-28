@@ -1,7 +1,19 @@
 import os
+from actions import Colors
+from actions import Colorizer
+from actions import Loading
+from actions import Typer
+
+colors = Colors()
+colorizer = Colorizer()
+loader = Loading()
+typer = Typer()
 
 def build_facility_report(arboretum):
     os.system('cls' if os.name == 'nt' else 'clear')
+    print(colorizer.colorize('+-++-++-++-++-++-++-++-++-+ +-++-++-++-++-++-+', colors.text_colors['OKGREEN'], '', ''))
+    print(colorizer.colorize('|A||r||b||o||r||e||t||u||m| |R||e||p||o||r||t|', colors.text_colors['HEADER'], colors.background_colors['BLUE'], colors.effects['BOLD']))
+    print(colorizer.colorize('+-++-++-++-++-++-++-++-++-+ +-++-++-++-++-++-+', colors.text_colors['OKGREEN'], '', ''))
     empty_list = 1
     for key, habitats in arboretum.habitats.items():
         if len(habitats) == 0:
@@ -16,7 +28,7 @@ def build_facility_report(arboretum):
                 print('\n    Plants:')
                 for index, plant in enumerate(item.plant_population):
                     print(f'      {index + 1}. {plant.species} ({plant.id})')
-        if empty_list >= 6:
+        if empty_list > 6:
             print('There are no biomes. Go create some!')
             input("\n\nPress any key to continue...")
             return
