@@ -11,3 +11,4 @@ class BlueJadeVine(Plant, Partial, MediumResistance, Grassland, Swamp):
         MediumResistance.__init__(self)
         Grassland.__init__(self)
         Swamp.__init__(self)
+        self.habitats = ['Grassland', 'Swamp']

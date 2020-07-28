@@ -10,3 +10,4 @@ class Silversword(Plant, Full, HighResistance, Grassland):
         Full.__init__(self)
         HighResistance.__init__(self)
         Grassland.__init__(self)
+        self.habitats = ['Grassland']

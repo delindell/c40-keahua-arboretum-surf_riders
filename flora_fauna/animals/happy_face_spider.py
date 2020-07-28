@@ -7,6 +7,7 @@ class HappyFaceSpider(Animal, Swamp):
         Animal.__init__(self, "Happy Face Spider", 0.5)
         Swamp.__init__(self)
         self.__prey = { "Crickets", "Worms", "Mosquitos", "Maggots" }
+        self.habitats = ['Swamp']
 
     @property
     def prey(self):
