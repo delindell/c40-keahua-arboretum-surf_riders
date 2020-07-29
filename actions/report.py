@@ -1,4 +1,5 @@
 import os
+import time
 from actions import Colors
 from actions import Colorizer
 from actions import Loading
@@ -10,6 +11,9 @@ loader = Loading()
 typer = Typer()
 
 def build_facility_report(arboretum):
+    print(colorizer.colorize('Creating report...', colors.text_colors['OKBLUE'],'',''))
+    loader.load('#', 25, 0.03, colorizer.colorize('\nSuccessfully loaded report 👍', colors.text_colors['OKGREEN'],'',''))
+    time.sleep(1)
     os.system('cls' if os.name == 'nt' else 'clear')
     print(colorizer.colorize('+-++-++-++-++-++-++-++-++-+ +-++-++-++-++-++-+', colors.text_colors['OKGREEN'], '', ''))
     print(colorizer.colorize('|A||r||b||o||r||e||t||u||m| |R||e||p||o||r||t|', colors.text_colors['HEADER'], colors.background_colors['BLUE'], colors.effects['BOLD']))
